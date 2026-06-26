@@ -1,0 +1,280 @@
+{
+  "specification": {
+    "name": "Universal Resource Token",
+    "version": "1.0.0",
+    "status": "Draft",
+    "timestamp": "2026-06-26T00:00:00Z",
+    "author": "Fuente Protocol Contributors"
+  },
+  "urt_schema": {
+    "type": "object",
+    "title": "Universal Resource Token v1.0",
+    "description": "Un token criptográfico que representa un recurso verificable con identidad, integridad, autenticidad y trazabilidad",
+    "required": [
+      "version",
+      "rid",
+      "hash",
+      "signature",
+      "timestamp",
+      "urn"
+    ],
+    "properties": {
+      "version": {
+        "type": "string",
+        "pattern": "^1\\.0\\.\\d+$",
+        "description": "Versión del protocolo URT",
+        "example": "1.0.0"
+      },
+      "rid": {
+        "type": "object",
+        "description": "Resource ID Token - Identificador único del recurso",
+        "required": ["id", "type", "namespace"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^RID-[A-F0-9]{8}$",
+            "description": "Identificador de 8 caracteres hexadecimales",
+            "example": "RID-A7CCC968"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "document",
+              "digital_asset",
+              "certificate",
+              "credential",
+              "identity",
+              "contract",
+              "data_package",
+              "nft",
+              "other"
+            ],
+            "description": "Clasificación del tipo de recurso"
+          },
+          "namespace": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{2,32}$",
+            "description": "Espacio de nombres del emisor",
+            "example": "fuente"
+          }
+        }
+      },
+      "hash": {
+        "type": "object",
+        "description": "HASH Token - Garantiza integridad del recurso",
+        "required": ["algorithm", "value", "original_size"],
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "enum": ["SHA-256", "SHA-512", "Blake2b"],
+            "description": "Algoritmo de hash utilizado",
+            "example": "SHA-256"
+          },
+          "value": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "Hash hexadecimal del recurso (SHA-256 = 64 caracteres)",
+            "example": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "original_size": {
+            "type": "integer",
+            "description": "Tamaño original del recurso en bytes",
+            "example": 1024
+          }
+        }
+      },
+      "metadata": {
+        "type": "object",
+        "description": "META Token - Clasifica y contextualiza el recurso",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Nombre descriptivo del recurso"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1024,
+            "description": "Descripción detallada"
+          },
+          "tags": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Etiquetas para categorización"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Propietario del recurso (dirección o ID)"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp de creación ISO 8601"
+          },
+          "expires_at": {
+            "type": ["string", "null"],
+            "format": "date-time",
+            "description": "Fecha de expiración opcional"
+          }
+        }
+      },
+      "signature": {
+        "type": "object",
+        "description": "SIG Token - Autentica la identidad del emisor",
+        "required": ["algorithm", "value", "public_key"],
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "enum": ["ECDSA", "EdDSA", "RSA-2048"],
+            "description": "Algoritmo criptográfico de firma",
+            "example": "ECDSA"
+          },
+          "value": {
+            "type": "string",
+            "description": "Firma digital codificada en base64",
+            "example": "MEYCIQCl8zqb4xW4T..."
+          },
+          "public_key": {
+            "type": "string",
+            "description": "Clave pública del firmante (base64/hex)"
+          },
+          "key_id": {
+            "type": "string",
+            "description": "Identificador de la clave utilizada",
+            "example": "key-001"
+          }
+        }
+      },
+      "ledger": {
+        "type": "object",
+        "description": "LEDGER Token - Registra el recurso en sistema distribuido",
+        "required": ["ledger_id", "timestamp"],
+        "properties": {
+          "ledger_id": {
+            "type": "string",
+            "pattern": "^ULR-[A-F0-9]{8}$",
+            "description": "ID del registro en ledger",
+            "example": "ULR-A7CCC968"
+          },
+          "ledger_type": {
+            "type": "string",
+            "enum": [
+              "IPFS",
+              "Arweave",
+              "Filecoin",
+              "BitTorrent",
+              "Custom"
+            ],
+            "description": "Tipo de storage distribuido"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp del registro"
+          },
+          "merkle_proof": {
+            "type": "string",
+            "description": "Prueba de Merkle para verificación"
+          }
+        }
+      },
+      "blockchain": {
+        "type": "object",
+        "description": "CHAIN Token - Anclaje en blockchain público",
+        "properties": {
+          "network": {
+            "type": "string",
+            "enum": ["Bitcoin", "Ethereum", "Solana", "Polygon", "None"],
+            "description": "Red blockchain utilizada para anclaje"
+          },
+          "transaction_hash": {
+            "type": "string",
+            "pattern": "^0x[a-f0-9]{64}$|^[a-f0-9]{64}$",
+            "description": "Hash de transacción blockchain",
+            "example": "0x123abc..."
+          },
+          "block_number": {
+            "type": "integer",
+            "description": "Número de bloque de confirmación"
+          },
+          "confirmation_count": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Número de confirmaciones en la red"
+          },
+          "contract_address": {
+            "type": "string",
+            "description": "Dirección del contrato inteligente"
+          }
+        }
+      },
+      "urn": {
+        "type": "object",
+        "description": "URN Token - Proporciona referencia global única",
+        "required": ["value"],
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "^urn:resource:[a-z0-9_-]+:[A-F0-9]{8}$",
+            "description": "URN global único según RFC 8141",
+            "example": "urn:resource:fuente:A7CCC968"
+          },
+          "resolver": {
+            "type": "string",
+            "format": "uri",
+            "description": "Endpoint para resolver el URN",
+            "example": "https://resolver.fuente.io/urn/"
+          }
+        }
+      },
+      "extensions": {
+        "type": "object",
+        "description": "Campos opcionales para extensibilidad",
+        "additionalProperties": true,
+        "example": {
+          "nft_standard": "ERC-721",
+          "collection": "Fuente Genesis",
+          "royalty_percentage": 5
+        }
+      }
+    }
+  },
+  "validation_rules": {
+    "checksum": "Validar hash del recurso antes de aceptar",
+    "signature": "Verificar firma con clave pública del emisor",
+    "timestamp": "Validar que timestamp esté dentro de rango aceptable",
+    "urn_format": "Verificar conformidad con RFC 8141",
+    "version_compatibility": "Asegurar compatibilidad de versión"
+  },
+  "serialization_formats": {
+    "JSON": "Formato canónico para almacenamiento y transmisión",
+    "Compact": "Formato comprimido: URT-RID-HASH-META-SIG-LEDGER-CHAIN-URN",
+    "Binary": "Formato binario para eficiencia (protobuf)"
+  },
+  "use_cases": [
+    {
+      "name": "Certificación Digital",
+      "description": "Documentos académicos, profesionales verificables"
+    },
+    {
+      "name": "NFTs y Activos Digitales",
+      "description": "Obras de arte, coleccionables con cadena de custodia"
+    },
+    {
+      "name": "Identidad Verificable",
+      "description": "Credenciales, atestaciones de identidad"
+    },
+    {
+      "name": "Cadena de Suministro",
+      "description": "Trazabilidad completa de productos"
+    },
+    {
+      "name": "Datos Científicos",
+      "description": "Publicaciones con integridad y autoría verificable"
+    },
+    {
+      "name": "Contratos Inteligentes",
+      "description": "Activos tokenizados con lógica ejecutable"
+    }
+  ]
+}
