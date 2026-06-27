@@ -1,0 +1,13 @@
+{
+  "hash_algorithm": "SHA-256",
+  "package_hash": null,
+  "manifest_hash": null,
+  "merkle_root": null,
+  "proofs": [],
+  "timestamp": null,
+  "signature": {
+    "algorithm": "ECDSA-secp256k1",
+    "public_key": null,
+    "signature": null
+  }
+}

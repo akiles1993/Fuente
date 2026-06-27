@@ -1,0 +1,28 @@
+{
+  "schema": "URP-3.0",
+  "package_id": "URP-BINANCE-ETH-2026-000001",
+  "resource_id": "RID-BINANCE-ETH-PACKAGE-001",
+  "version": "3.0",
+  "entrypoints": {
+    "ledger": "ledger/resource_ledger.json",
+    "registry": "registry/binance_addresses.json",
+    "verification": "cryptography/verification.json",
+    "token": "tokens/resource_token.json",
+    "openapi": "api/openapi.yaml"
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "manifest_hash": null,
+    "package_hash": null,
+    "merkle_root": null
+  },
+  "signature": {
+    "algorithm": "ECDSA-secp256k1",
+    "signature": null,
+    "public_key": null
+  },
+  "anchor": {
+    "network": null,
+    "txid": null
+  }
+}

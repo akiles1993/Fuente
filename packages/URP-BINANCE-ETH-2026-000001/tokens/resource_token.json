@@ -1,0 +1,9 @@
+{
+  "standard": "BCNT",
+  "token_id": "BCNT-RID-BINANCE-ETH-PACKAGE-001",
+  "resource_supply": 1,
+  "divisible": false,
+  "mintable": true,
+  "transferable": true,
+  "verifiable": true
+}

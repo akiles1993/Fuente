@@ -1,0 +1,33 @@
+{
+  "resource_id": "RID-BINANCE-ETH-ADDRSET-25",
+  "name": "Binance Ethereum Address Registry",
+  "classification": "exchange_hot_wallets",
+  "address_count": 25,
+  "addresses": [
+    { "id": "BINANCE-001", "address": "0x3f5ce5fbfe3e9af3971dd833d26ba9b5c936f0be", "label": "Binance 1" },
+    { "id": "BINANCE-002", "address": "0xd551234ae421e3bcba99a0da6d736074f22192ff", "label": "Binance 2" },
+    { "id": "BINANCE-003", "address": "0x564286362092d8e7936f0549571a803b203aaced", "label": "Binance 3" },
+    { "id": "BINANCE-004", "address": "0x0681d8db095565fe8a346fa0277bffde9c0edbbf", "label": "Binance 4" },
+    { "id": "BINANCE-005", "address": "0xfe9e8709d3215310075d67e3ed32a380ccf451c8", "label": "Binance 5" },
+    { "id": "BINANCE-006", "address": "0x4e9ce36e442e55ecd9025b9a6e0d88485d628a67", "label": "Binance 6" },
+    { "id": "BINANCE-007", "address": "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8", "label": "Binance 7" },
+    { "id": "BINANCE-008", "address": "0xf977814e90da44bfa03b6295a0616a897441acec", "label": "Binance 8" },
+    { "id": "BINANCE-009", "address": "0x001866ae5b3de6caa5a51543fd9fb64f524f5478", "label": "Binance 9" },
+    { "id": "BINANCE-010", "address": "0x85b931a32a0725be14285b66f1a22178c672d69b", "label": "Binance 10" },
+    { "id": "BINANCE-011", "address": "0x708396f17127c42383e3b9014072679b2f60b82f", "label": "Binance 11" },
+    { "id": "BINANCE-012", "address": "0xe0f0cfde7ee664943906f17f7f14342e76a5cec7", "label": "Binance 12" },
+    { "id": "BINANCE-013", "address": "0x8f22f2063d253846b53609231ed80fa571bc0c8f", "label": "Binance 13" },
+    { "id": "BINANCE-014", "address": "0x28c6c06298d514db089934071355e5743bf21d60", "label": "Binance 14" },
+    { "id": "BINANCE-015", "address": "0x21a31ee1afc51d94c2efccaa2092ad1028285549", "label": "Binance 15" },
+    { "id": "BINANCE-016", "address": "0xdfd5293d8e347dfe59e90efd55b2956a1343963d", "label": "Binance 16" },
+    { "id": "BINANCE-017", "address": "0x56eddb7aa87536c09ccc2793473599fd21a8b17f", "label": "Binance 17" },
+    { "id": "BINANCE-018", "address": "0x9696f59e4d72e237be84ffd425dcad154bf96976", "label": "Binance 18" },
+    { "id": "BINANCE-019", "address": "0x4d9ff50ef4da947364bb9650892b2554e7be5e2b", "label": "Binance 19" },
+    { "id": "BINANCE-020", "address": "0x4976a4a02f38326660d17bf34b431dc6e2eb2327", "label": "Binance 20" },
+    { "id": "BINANCE-021", "address": "0xd88b55467f58af508dbfdc597e8ebd2ad2de49b3", "label": "Binance 21" },
+    { "id": "BINANCE-022", "address": "0x7dfe9a368b6cf0c0309b763bb8d16da326e8f46e", "label": "Binance 22" },
+    { "id": "BINANCE-023", "address": "0x345d8e3a1f62ee6b1d483890976fd66168e390f2", "label": "Binance 23" },
+    { "id": "BINANCE-024", "address": "0xc3c8e0a39769e2308869f7461364ca48155d1d9e", "label": "Binance 24" },
+    { "id": "BINANCE-025", "address": "0x2e581a5ae722207aa59acd3939771e7c7052dd3d", "label": "Binance 25" }
+  ]
+}
