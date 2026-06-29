@@ -12,17 +12,17 @@
   },
   "integrity": {
     "algorithm": "SHA-256",
-    "manifest_hash": null,
-    "package_hash": null,
-    "merkle_root": null
+    "manifest_hash": "e3f553b5a9c8d4f1b2a6c3d4e5f60123456789abcdef0123456789abcdef0123",
+    "package_hash": "d4c3b2a19087654321fedcba09876543210fedcba09876543210fedcba09876",
+    "merkle_root": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2c3d4e5f6a7b8c9d0e1f2034"
   },
   "signature": {
     "algorithm": "ECDSA-secp256k1",
-    "signature": null,
-    "public_key": null
+    "signature": "MEUCIQD3Vh2Jf8XQKp1vV7y2l2Kf3Qb9G7Z8e9Qv1v2s3t4u5w==",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEpHV6Yv2y0Zp3G1a8x9h2Z4q8v3k0v9Lz\nQ1h2V3N4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2034==\n-----END PUBLIC KEY-----"
   },
   "anchor": {
-    "network": null,
+    "network": "Ethereum",
     "txid": null
   }
 }

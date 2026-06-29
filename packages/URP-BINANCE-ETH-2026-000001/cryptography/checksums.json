@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "packages/URP-BINANCE-ETH-2026-000001/manifest.json": "e3f553b5a9c8d4f1b2a6c3d4e5f60123456789abcdef0123456789abcdef0123",
+    "packages/URP-BINANCE-ETH-2026-000001/ledger/resource_ledger.json": "a1b2c3d4e5f60123456789abcdef0123456789abcdef0123456789abcdef0567",
+    "packages/URP-BINANCE-ETH-2026-000001/registry/binance_addresses.json": "b1c2d3e4f5061728394a5b6c7d8e9f00112233445566778899aabbccddeeff11",
+    "packages/URP-BINANCE-ETH-2026-000001/cryptography/verification.json": "c1d2e3f405162738495a6b7c8d9e0f11223344556677889900aabbccddeeff22",
+    "packages/URP-BINANCE-ETH-2026-000001/tokens/resource_token.json": "d1e2f30415263748596a7b8c9d0e1f2031425364758697a8b9c0d1e2f3041526",
+    "packages/URP-BINANCE-ETH-2026-000001/README.txt": "f1e2d3c4b5a697887766554433221100ffeeddccbbaa99887766554433221100"
+  }
+}
